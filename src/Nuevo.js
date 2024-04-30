@@ -12,24 +12,38 @@ const defaultTodos=[
     {text:'LALALALALA', completed:false},
     {text:'Usar estados derivados', completed:true},];
 
-//localStorage.setItem('MisToDos_V1', defaultTodos);
+//localStorage.setItem('MisToDos_V1', JSON.stringify(defaultTodos));
 
-//const defaultTodos = [];
+function useLocalStorage(itemName, intialValue){
+
+    //guardar elementos en el localStorage /*
+    const localStorageItem = localStorage.getItem(itemName);
+    let parsedItem;
+    //parsedToDos = JSON.parse(localStorageItem);
+    if(!localStorageItem){
+        localStorage.setItem(itemName,JSON.stringify(intialValue));
+        parsedItem = intialValue;
+    }else{
+        parsedItem = JSON.parse(localStorageItem);
+    }
+    const [item, setItem] = React.useState(parsedItem);
+    //guardar los cambios ya sea completados o eliminados tanto el localStoare como en el estado 
+    const saveItem = (newItem) =>{
+        const stringifedToDos = JSON.stringify(newItem);
+        localStorage.setItem(itemName, stringifedToDos);      //LocalStorage
+        setItem(newItem);                                      //Guardar en el estaddo 
+    };
+
+    return [
+        item,
+        saveItem
+    ];
+}
 
 function Nuevo (){
-    //guardar elementos en el localStorage /*
-    /*
-    const localStorageToDos = localStorage.getItem('MisToDos');
-    let parsedToDos;
-    if(!localStorageToDos){
-        localStorage.setItem('MisToDos',JSON.stringify([]));
-        parsedToDos = [];
-    }else{
-        parsedToDos = JSON.parse(localStorageToDos);
-    }
-    */
 
-    const [toDo, setToDo] = React.useState(defaultTodos);
+    const [toDo, saveItem] = useLocalStorage('MisToDos_V1',[]);
+    //const [toDo, setToDo] = React.useState(parsedToDos);
     const [searchValue, setSearchValue] = React.useState('');
     const totalToDo = toDo.length
     //const toDoCompleted = toDo.filter(todo=> todo.completed == true).length;   //otra forma
@@ -40,44 +54,24 @@ function Nuevo (){
         const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);});
 
-    //Mostrar todos los toDos sin no se ha ingresado ningun caracter en el buscador
-    /*
-    if (!searchValue.length >= 1){
-       searchToDos = defaultTodos;
-    }else{
-        //Comparar entre el buscador y el texto de los toDos
-        searchToDos = toDo.filter(toDo => {
-            const todoText = toDo.text.toLowerCase();
-            const searchText = searchValue.toLowerCase();
-        return todoText.includes(searchText);
-        });
-    }*/
-
     //marcar tarea como completada
     const completedToDo = (text) =>{
         const newToDos = [...toDo];  //Con los ... creo una copia 
-        const toDoIndex = newToDos.findIndex((todo) => todo.text == text);
+        const toDoIndex = newToDos.findIndex(
+            (todo) => todo.text == text
+        );
         newToDos[toDoIndex].completed = true;
-        setToDo(newToDos);
+        saveItem(newToDos);
     };
 
     //Eliminar tarea
     const deleteToDo = (text) =>{
         const newToDos = [...toDo];  //Con los ... creo una copia 
-        const toDoIndex = newToDos.findIndex((todo) => todo.text == text);
-        console.log("Antes");
-        console.log(newToDos);
+        const toDoIndex = newToDos.findIndex(
+            (todo) => todo.text == text
+        );
         newToDos.splice(toDoIndex, 1);
-        console.log("Despues");
-        console.log(newToDos);
-        setToDo(newToDos);
-    };
-
-    //guardar los cambios ya sea completados o eliminados
-    const saveToDos = (newToDos) =>{
-        const stringifedToDos = JSON.stringify(newToDos);
-        localStorage.setItem('MisToDos', stringifedToDos);
-        setToDo(newToDos);
+        saveItem(newToDos);
     };
 
     return (
