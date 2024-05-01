@@ -40,7 +40,7 @@ function useLocalStorage(itemName, intialValue){
     ];
 }
 
-function Nuevo (){
+function App (){
 
     const [toDo, saveItem] = useLocalStorage('MisToDos_V1',[]);
     //const [toDo, setToDo] = React.useState(parsedToDos);
@@ -58,7 +58,7 @@ function Nuevo (){
     const completedToDo = (text) =>{
         const newToDos = [...toDo];  //Con los ... creo una copia 
         const toDoIndex = newToDos.findIndex(
-            (todo) => todo.text == text
+            (todo) => todo.text === text
         );
         newToDos[toDoIndex].completed = true;
         saveItem(newToDos);
@@ -68,7 +68,7 @@ function Nuevo (){
     const deleteToDo = (text) =>{
         const newToDos = [...toDo];  //Con los ... creo una copia 
         const toDoIndex = newToDos.findIndex(
-            (todo) => todo.text == text
+            (todo) => todo.text === text
         );
         newToDos.splice(toDoIndex, 1);
         saveItem(newToDos);
@@ -98,4 +98,4 @@ function Nuevo (){
     );
 }
 
-export default Nuevo;
+export default App;
