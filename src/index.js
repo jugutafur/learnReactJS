@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Counter from './components/Counter/Counter';
-import Customhooks from './components/Customhooks/Customhooks';
 import reportWebVitals from './reportWebVitals';
+import Counter1 from './components/Customhooks/Counter1';
+import Counter2 from './components/Customhooks/Counter2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Counter/>
+    <Counter1/>
     <App/>
-    <Customhooks/>
+    <Counter2/>
   </React.StrictMode>
 );
 

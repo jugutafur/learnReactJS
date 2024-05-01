@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const useCounter = ()=> {
+const useCounter2 = ()=> {
     const [counter, setCounter] = useState(0);
 
     const incrementar = () => setCounter(counter+1);
@@ -15,8 +15,8 @@ const useCounter = ()=> {
     }
 }
 
-function Customhooks(){
-    const {counter, incrementar, decrementar, reset } = useCounter();
+function Counter2(){
+    const {counter, incrementar, decrementar, reset } = useCounter2();
     return (
         <div>
         <h1>Desde el componente customhook</h1>
@@ -28,4 +28,4 @@ function Customhooks(){
     );
 };
 
-export default Customhooks;
+export default Counter2;
