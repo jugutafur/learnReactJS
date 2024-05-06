@@ -4,7 +4,7 @@ import { ToDoSearch } from './components/components/ToDoSearch/ToDoSearch';
 import { CreateToDoButton } from './components/components/CreateToDoButton/CreateToDoButton';
 import { ToDoItem } from './components/components/ToDoItem/ToDoItem';
 import { TodoList } from './components/components/TodoList/TodoList';
-import { useLocalStorage } from './components/Customhooks/useLocalStorage';
+import { useLocalStorage } from './components/hooks/useLocalStorage';
 
 function App (){
 

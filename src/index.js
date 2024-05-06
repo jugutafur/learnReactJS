@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Counter1 from './components/Customhooks/Counter1';
-import Counter2 from './components/Customhooks/Counter2';
+import Counter1 from './components/hooks/Counter1';
+import Counter2 from './components/hooks/Counter2';
+import ArticleDetails from './components/components/ArticleDetails/AtrticleDetails.jsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Counter1/>
     <App/>
     <Counter2/>
+    <ArticleDetails/>
   </React.StrictMode>
 );
 

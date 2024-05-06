@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Counter1 from '../Customhooks/Counter1';
+import Counter1 from '../../../Customhooks/Counter1';
 
 describe("<Counter1/>", ()=>{
     test("Renders the Counter component", ()=>{
@@ -8,7 +8,7 @@ describe("<Counter1/>", ()=>{
         const countElement = screen.getByText(/Count : /i);
         const buttonElement = screen.getByText(/Increment/i);
 
-        //Esperar que dentro del Dccument este lo anterior
+        //Esperar que dentro del Document este lo anterior
         expect(countElement).toBeInTheDocument();
         expect(buttonElement).toBeInTheDocument();
     });
