@@ -1,31 +1,44 @@
 import React from 'react';
 import Testimonio from '../Testimonio/Testimonio';
+import './FreeCodeCamp.css';
+import { ClickCounter } from '../ClickCounter/ClickCounter';
+import Calculadora from '../Calculadora/Calculadora';
 
 export function FreeCodeCamp () {
   return (
-    <div>
-      <p>Desde FreeCodeCamp</p>
-      <Testimonio
-          name = 'Juan guillermo'
-          city = 'Bogota'
-          profession = 'Developer Full Stack'
-          company = 'Banco'
-          testimonio = 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)'
-      />
-            <Testimonio
-          name = 'Juan guillermo'
-          city = 'Bogota'
-          profession = 'Developer Full Stack'
-          company = 'Banco'
-          testimonio = 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)'
-      />
-            <Testimonio
-          name = 'Juan guillermo'
-          city = 'Bogota'
-          profession = 'Developer Full Stack'
-          company = 'Banco'
-          testimonio = 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)'
-      />
-    </div>
+    <div className='App'>
+      <div className='container-principal'>
+        <h1>Esto es lo que dicen nuestros alumnos sobre FreeCodeCamp:</h1>
+        <Testimonio
+          name = 'Shawn Wang'
+          city = 'Singapore'
+          imagen = 'Uno'
+          profession = 'Software Engineer'
+          company = 'Amazon'
+          testimonio = 'Its scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. freeCodeCamp changed my life.' />
+          <Testimonio
+          name = 'Sarah Chima'
+          city = 'Nigeria'
+          imagen = 'Dos'
+          profession = 'Software Engineer'
+          company = 'ChatDesk'
+          testimonio = 'freeCodeCamp was the gateway to my career as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company.' />
+          <Testimonio
+          name = 'Emma Bostian'
+          city = 'Sweden'
+          imagen = 'Tres'
+          profession = 'Software Engineer'
+          company = 'Spotify'
+          testimonio = 'Ive always struggled with learning JavaScript. Ive taken many courses but freeCodeCamps course was the one which stuck. Studying JavaScript as well as data structures and algorithms on freeCodeCamp gave me the skills and confidence I needed to land my dream job as a software engineer at Spotify.' />
+      </div>
+
+      <div className='container-FreeCodeCamp-clickCounter'>
+        <ClickCounter />
+      </div>
+
+      <div className='Container-Calculadora'>
+        <Calculadora />
+      </div>
+    </div>    
   );
 }
