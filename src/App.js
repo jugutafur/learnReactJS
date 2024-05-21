@@ -5,7 +5,7 @@ import { CreateToDoButton } from './components/Platzi/CreateToDoButton/CreateToD
 import { ToDoItem } from './components/Platzi/ToDoItem/ToDoItem';
 import { TodoList } from './components/Platzi/TodoList/TodoList';
 import { useLocalStorage } from './hooks/useLocalStorage.jsx';
-import { ItemsLoading } from './components/Platzi/Stateloadings/Itemsloading/Itemsloading.jsx';
+import { ItemsLoading } from './components/Platzi/Stateloadings/ItemsLoading/ItemsLoading.jsx';
 import { ItemsError } from './components/Platzi/Stateloadings/ItemsError/ItemsError.jsx';
 import { AddNewItems } from './components/Platzi/Stateloadings/AddNewItems/AddNewItems.jsx';
 

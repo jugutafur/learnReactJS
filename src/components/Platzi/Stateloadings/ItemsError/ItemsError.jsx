@@ -4,6 +4,6 @@ function ItemsError () {
   return (
     <p>Error al cargar2</p>
   );
-}
+};
 
 export { ItemsError };

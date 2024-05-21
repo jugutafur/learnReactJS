@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import Counter1 from '../../../Customhooks/Counter1';
+import Counter1 from '../../../hooks/Counter1';
 
-describe("<Counter1/>", ()=>{
+describe("test by component <Counter1/>", ()=>{
     test("Renders the Counter component", ()=>{
         render(<Counter1 />);
         //Asignar a variable lo que renderiza el componente bajo prueba
@@ -15,13 +15,10 @@ describe("<Counter1/>", ()=>{
 
     test("increments the count when button is Clicked", ()=>{
         render(<Counter1 />);
-
         const buttonElement = screen.getByText(/Increment/i)
-
         //Con fireEvent podemos verificar eventos en este caso el evento click
         fireEvent.click(buttonElement);//Despues de que se presente un click 
         const countElement = screen.getByText(/Count : 1/i);
-
         expect(countElement).toBeInTheDocument();
     });
 });
